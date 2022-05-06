@@ -1,0 +1,48 @@
+/* Custom styles
+   ========================================================================== */
+
+
+.site-header__nav ul.menu > li:not(.menu-item-has-children) > a:after {
+   display: none !important;
+}  
+
+
+.f12 {
+   font-size: 12px !important;
+}
+
+.f16 {
+   font-size: 16px !important;
+}
+
+.f18 {
+   font-size: 18px !important;
+}
+
+.f20 {
+   font-size: 20px !important;
+}
+
+.f22 {
+   font-size: 22px !important;
+}
+
+.f24 {
+   font-size: 24px !important;
+}
+
+.f30 {
+   font-size: 30px !important;
+}
+
+.f40 {
+   font-size: 40px !important;
+}
+
+.f50 {
+   font-size: 50px !important;
+}
+
+.f60 {
+   font-size: 60px !important;
+}
