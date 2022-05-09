@@ -37,7 +37,7 @@ DASHBOARD
             </div>
         </section>
 
-        <section class="section pt-0">
+        <section class="section pt-0  hidden-md-down">
             <div class="container">
                 <div class="row">
                     <div class="container">
@@ -158,6 +158,131 @@ DASHBOARD
                       </div>
                     
                 </div>
+            </div>
+        </section>
+
+        <section class="section hidden-lg-up pt-0">
+            <style>
+                .accordion-button {
+                    background: none !important;
+                    color: #000 !important;
+                    text-decoration: none !important;
+                    box-shadow: none !important;
+                }
+            </style>
+            <div class="container">
+                <div class="accordion accordion-flush" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                            Account overview
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body">
+                            <h3 class="text-dark py-2 px-2">Account Overview</h3>
+                            <div class="px-2">
+                                <p class="bold">Name: {{ auth()->user()->name}}</p>
+                                <p>Email: {{ auth()->user()->email}}</p>
+                                <p>Location: </p>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                            My orders
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body">
+                            <div class="px-2">
+                                <p>You currently have no orders</p>
+                                <div class="section--first_cta py-3">
+                                    <a  style="font-family:'Poppins' !important; letter-spacing: 0em !important; border-width: 4px" class=" btn btn--primary btn--round btn-light rounded-0 border-dark" href="market">Shop Now</a>&nbsp;
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                            My details
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                        <div class="accordion-body">
+                            <div class="px-2">
+                                <p>Feel free to edit any of your details below so your SchoolThings account is totally up to date.</p>
+                                <div class="section--first_cta py-3">
+                                    @if (Laravel\Fortify\Features::canUpdateProfileInformation())
+                                    @livewire('profile.update-profile-information-form')
+                    
+                                    <x-jet-section-border />
+                                @endif
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingfour">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsefour" aria-expanded="false" aria-controls="panelsStayOpen-collapsefour">
+                            Change password
+                          </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapsefour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingfour">
+                            <div class="accordion-body">
+                                <div class="px-2">
+                                    <div class="section--first_cta py-3">
+                                        @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
+                                        <div class="mt-10 sm:mt-0">
+                                            @livewire('profile.update-password-form')
+                                        </div>
+                                            <x-jet-section-border />
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingsix">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsesix" aria-expanded="false" aria-controls="panelsStayOpen-collapsesix">
+                            Address book
+                          </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapsesix" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingsix">
+                          <div class="accordion-body">
+                            <div class="px-2">
+                                    <div class="section--first_cta py-3">
+                                        <a  style="font-family:'Poppins' !important; letter-spacing: 0em !important; border-width: 4px" class=" btn btn--primary btn--round btn-light rounded-0 border-dark" href="market">Shop Now</a>&nbsp;
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingseven">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseseven" aria-expanded="false" aria-controls="panelsStayOpen-collapseseven">
+                            Payment methods
+                          </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseseven" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingseven">
+                          <div class="accordion-body">
+                            <div class="px-2">
+                                <div class="section--first_cta py-3">
+                                    <a  style="font-family:'Poppins' !important; letter-spacing: 0em !important; border-width: 4px" class=" btn btn--primary btn--round btn-light rounded-0 border-dark" href="market">Shop Now</a>&nbsp;
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
             </div>
         </section>
       </main>
