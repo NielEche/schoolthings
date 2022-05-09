@@ -48,3 +48,6 @@
 }
 
 
+.site-header__nav ul.menu ul a:before {
+   content: none !important;
+}

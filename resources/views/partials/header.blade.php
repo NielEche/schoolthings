@@ -31,19 +31,19 @@
                     <div class="menu-top-menu-container">
                       <ul class="menu" id="top-menu">
                         <li class="mx-3">
-                          <a class="py-0" href="blog.html">ABOUT</a>
+                          <a class="py-0" href="about">ABOUT</a>
                         </li>
                         <li class="mx-3">
-                          <a class="py-0" href="404.html">NEW IN</a>
+                          <a class="py-0" href="market">NEW IN</a>
                         </li>
                         <li class="mx-3">
-                          <a class="py-0" href="">TRENDING NOW</a>
+                          <a class="py-0" href="market">TRENDING NOW</a>
                         </li>
                         <li class="mx-3">
                           <a href="market" class="py-0" href="">MARKET</a>
                         </li>
                         <li class="mx-3">
-                          <a class="py-0" href="">SELL NOW</a>
+                          <a class="py-0" href="sell">SELL NOW</a>
                         </li>
                       </ul>
                     </div>
@@ -56,36 +56,44 @@
                     <div class="menu-top-menu-container">
                       <ul class="menu" id="top-menu">
                         <li class="mx-3">
-                          <a class="py-0" href="blog.html"><i style="font-size: 20px" class="fa-solid fa-magnifying-glass"></i></a>
+                          <a class="py-0" href="search"><i style="font-size: 20px" class="fa-solid fa-magnifying-glass"></i></a>
                         </li>
                         <li class="mx-3">
-                          <a class="py-0" href="404.html"><i style="font-size: 20px" class="fa-regular fa-heart"></i></a>
+                          <a class="py-0" href="saved"><i style="font-size: 20px" class="fa-regular fa-heart"></i></a>
                         </li>
                         <li class="menu-item-has-children mx-3">
                           <a class="py-0" href="#"><i style="font-size: 20px" class="fa-solid fa-user"></i></a>
-                          <ul class="sub-menu">
+                          <ul class="sub-menu pt-0">
+                            <li class="d-flex bg-warning pt-0 pb-0">
+                              @if (Auth::check())
+                            
+                                <h3 class="px-2 py-2 pb-0 m-0 f16">Hi {{ auth()->user()->name}}</h3>
+                                <form method="POST" action="{{ route('logout') }}" >
+                                  @csrf
+                                  <a class="px-3 py-1 f16 pb-0 m-0" style="font-weight: 600;" href="{{ route('logout') }}"
+                                                @click.prevent="$root.submit();">
+                                      {{ __('Log Out') }}
+                                  </a>
+                                </form>
+                              @else
+                                <a href="login">
+                                  <span>Login/Register</span>
+                                </a>
+                              @endif
+                            </li>
                             <li>
-                              <a href="case-studies.html">
-                                <span>Case Studies</span>
-                                <span class="sub-head-2">Archive portfolio page</span>
+                              <a href="dashboard">
+                                <span>My Account</span>
                               </a>
                             </li>
                             <li>
-                              <a href="portfolio-align-right.html">
-                                <span>Portfolio &mdash; Align Right</span>
-                                <span class="sub-head-2">Single portfolio page</span>
+                              <a href="orders">
+                                <span>My Orders</span>
                               </a>
                             </li>
                             <li>
-                              <a href="portfolio-align-center.html">
-                                <span>Portfolio &mdash; Align Center</span>
-                                <span class="sub-head-2">Single portfolio page</span>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="portfolio-align-left.html">
-                                <span>Portfolio &mdash; Align Left</span>
-                                <span class="sub-head-2">Single portfolio page</span>
+                              <a href="delivery">
+                                <span>DELIVERY & RETURNS</span>
                               </a>
                             </li>
                           </ul>
@@ -117,36 +125,44 @@
                     <div class="menu-top-menu-container">
                       <ul class="menu" id="top-menu">
                         <li class="mx-2">
-                          <a class="py-0" href="blog.html"><i style="font-size: 18px" class="fa-solid fa-magnifying-glass"></i></a>
+                          <a class="py-0" href="search"><i style="font-size: 18px" class="fa-solid fa-magnifying-glass"></i></a>
                         </li>
                         <li class="mx-3">
-                          <a class="py-0" href="404.html"><i style="font-size: 18px" class="fa-regular fa-heart"></i></a>
+                          <a class="py-0" href="saved"><i style="font-size: 18px" class="fa-regular fa-heart"></i></a>
                         </li>
                         <li class="menu-item-has-children mx-3">
                           <a class="py-0" href="#"><i style="font-size: 18px" class="fa-solid fa-user"></i></a>
-                          <ul class="sub-menu">
+                          <ul class="sub-menu pt-0">
+                            <li class="d-flex bg-warning pt-0 pb-0">
+                              @if (Auth::check())
+                            
+                                <h3 class="px-2 py-2 pb-0 m-0 f16">Hi {{ auth()->user()->name}}</h3>
+                                <form method="POST" action="{{ route('logout') }}" >
+                                  @csrf
+                                  <a class="px-3 py-1 f16 pb-0 m-0" style="font-weight: 600;" href="{{ route('logout') }}"
+                                                @click.prevent="$root.submit();">
+                                      {{ __('Log Out') }}
+                                  </a>
+                                </form>
+                              @else
+                                <a href="login">
+                                  <span>Login/Register</span>
+                                </a>
+                              @endif
+                            </li>
                             <li>
-                              <a href="case-studies.html">
-                                <span>Case Studies</span>
-                                <span class="sub-head-2">Archive portfolio page</span>
+                              <a href="dashboard">
+                                <span>My Account</span>
                               </a>
                             </li>
                             <li>
-                              <a href="portfolio-align-right.html">
-                                <span>Portfolio &mdash; Align Right</span>
-                                <span class="sub-head-2">Single portfolio page</span>
+                              <a href="orders">
+                                <span>My Orders</span>
                               </a>
                             </li>
                             <li>
-                              <a href="portfolio-align-center.html">
-                                <span>Portfolio &mdash; Align Center</span>
-                                <span class="sub-head-2">Single portfolio page</span>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="portfolio-align-left.html">
-                                <span>Portfolio &mdash; Align Left</span>
-                                <span class="sub-head-2">Single portfolio page</span>
+                              <a href="delivery">
+                                <span>DELIVERY & RETURNS</span>
                               </a>
                             </li>
                           </ul>
