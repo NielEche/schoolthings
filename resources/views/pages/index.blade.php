@@ -125,7 +125,7 @@
                         </div>
                       </div>
                       <div class="section--first_cta  text-center py-3">
-                        <a  style="font-family:'Poppins' !important; letter-spacing: 0em !important; border-width: 4px" class=" btn btn--primary btn--round btn-light rounded-0 border-dark" href="">See All</a>&nbsp;
+                        <a  style="font-family:'Poppins' !important; letter-spacing: 0em !important; border-width: 4px" class=" btn  btn-light rounded-0 border-dark" href="">See All</a>&nbsp;
                       </div>
                     </div>
                   </div>

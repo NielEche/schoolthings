@@ -72,8 +72,11 @@
             {{ __('Saved.') }}
         </x-jet-action-message>
 
-        <x-jet-button wire:loading.attr="disabled" wire:target="photo">
+        <div class="section--first_cta py-3">
+          
+        <button wire:loading.attr="disabled" class=" btn btn--primary btn--round btn-light rounded-0 border-dark" style="border-width: 4px" wire:target="photo">
             {{ __('Save') }}
-        </x-jet-button>
+        </button>
+        </div>
     </x-slot>
 </x-jet-form-section>
