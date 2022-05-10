@@ -68,12 +68,14 @@
                               @if (Auth::check())
                             
                                 <h3 class="px-2 py-2 pb-0 m-0 f16">Hi {{ auth()->user()->name}}</h3>
-                                <form method="POST" action="{{ route('logout') }}" >
+                                
+                                <form method="POST" action="{{ route('logout') }}" x-data>
                                   @csrf
-                                  <a class="px-3 py-1 f16 pb-0 m-0" style="font-weight: 600;" href="{{ route('logout') }}"
-                                                @click.prevent="$root.submit();">
+              
+                                  <x-jet-responsive-nav-link class="px-3 py-1 f16 pb-0 m-0" style="font-weight: 600;" href="{{ route('logout') }}"
+                                                 @click.prevent="$root.submit();">
                                       {{ __('Log Out') }}
-                                  </a>
+                                  </x-jet-responsive-nav-link>
                                 </form>
                               @else
                                 <a href="login">
@@ -87,7 +89,7 @@
                               </a>
                             </li>
                             <li>
-                              <a href="orders">
+                              <a href="dashboard">
                                 <span>My Orders</span>
                               </a>
                             </li>
@@ -156,7 +158,7 @@
                               </a>
                             </li>
                             <li>
-                              <a href="orders">
+                              <a href="dashboard">
                                 <span>My Orders</span>
                               </a>
                             </li>

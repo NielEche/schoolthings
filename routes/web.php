@@ -22,6 +22,14 @@ Route::get('/single', function () {
     return view('market.singleProduct');
 });
 
+
+Route::get('about', [PagesController::class, 'about'])->name('about');
+Route::get('delivery', [PagesController::class, 'delivery'])->name('delivery');
+Route::get('privacy', [PagesController::class, 'privacy'])->name('privacy');
+Route::get('tc', [PagesController::class, 'tc'])->name('tc');
+Route::get('faq', [PagesController::class, 'faq'])->name('faq');
+Route::get('help', [PagesController::class, 'help'])->name('help');
+
 Route::get('market', [PagesController::class, 'market'])->name('market');
 
 Route::middleware([
@@ -30,6 +38,6 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+        return view('dashboard'); })->name('dashboard');
+        Route::get('sell', [PagesController::class, 'sell'])->name('sell');
 });

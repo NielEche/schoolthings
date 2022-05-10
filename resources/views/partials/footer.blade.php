@@ -26,7 +26,7 @@
               <div class="widget_nav_menu">
                 <ul>
                   <li class="py-2">
-                    <a class=" text-dark" href="">ABOUT US</a>
+                    <a class=" text-dark" href="about">ABOUT US</a>
                   </li>
                   <li class="py-2">
                     <a class=" text-dark" href="mailto:">INFO@SCHOOLTHINGS.COM</a>
@@ -45,16 +45,13 @@
               <div class="widget_nav_menu">
                 <ul>
                   <li class="py-2">
-                    <a class=" text-dark" href="page.html">SHIPPING & RETURNS</a>
+                    <a class=" text-dark" href="delivery">DELIVERY & RETURNS</a>
                   </li>
                   <li class="py-2">
-                    <a class=" text-dark" href="page.html">SUSTAINABILITY </a>
+                    <a class=" text-dark" href="help">HELP & INFORMATION</a>
                   </li>
                   <li class="py-2">
-                    <a class=" text-dark" href="page.html">HELP & INFORMATION</a>
-                  </li>
-                  <li class="py-2">
-                    <a class=" text-dark" href="page.html">FAQ</a>
+                    <a class=" text-dark" href="faq">FAQ</a>
                   </li>
                 </ul>
               </div>
@@ -67,16 +64,13 @@
               <div class="widget_nav_menu">
                 <ul>
                   <li class="py-2">
-                    <a class=" text-dark" href="page.html">SHIPPING & RETURNS</a>
+                    <a class=" text-dark" href="delivery">DELIVERY & RETURNS</a>
                   </li>
                   <li class="py-2">
-                    <a class=" text-dark" href="page.html">SUSTAINABILITY </a>
+                    <a class=" text-dark" href="help">HELP & INFORMATION</a>
                   </li>
                   <li class="py-2">
-                    <a class=" text-dark" href="page.html">HELP & INFORMATION</a>
-                  </li>
-                  <li class="py-2">
-                    <a class=" text-dark" href="page.html">FAQ</a>
+                    <a class=" text-dark" href="faq">FAQ</a>
                   </li>
                 </ul>
               </div>
@@ -142,8 +136,8 @@
               © {{ now()->year }} SCHOOL THINGS</a>
           </div>
           <div class="col-12 col-md-6 col-xl-6 text-md-right">
-            <a class="sub-head in-view__child in-view__child--in px-2 text-dark" href="#">TERMS & CONDITION</a>
-            <a class="sub-head in-view__child in-view__child--in px-2 text-dark" href="">PRIVACY POLICY</a>
+            <a class="sub-head in-view__child in-view__child--in px-2 text-dark" href="tc">TERMS & CONDITION</a>
+            <a class="sub-head in-view__child in-view__child--in px-2 text-dark" href="privacy">PRIVACY POLICY</a>
           </div>
         </div>
       </div>

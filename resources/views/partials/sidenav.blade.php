@@ -27,7 +27,7 @@
                       <a href="help">HELP</a>
                     </li>
                     <li>
-                      <a href="deliveryl">DELIVERY & RETURNS</a>
+                      <a href="delivery">DELIVERY & RETURNS</a>
                     </li>
                   </ul>
                 </li>
@@ -61,6 +61,9 @@
             </a>
           </form>
           @else
+          <a class="px-3 f16 m-0 btn btn--secondary" style="font-weight: 600;" href="login">
+            <span>Login</span>
+          </a>
 
           @endif
         </div>
