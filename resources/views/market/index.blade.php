@@ -115,79 +115,48 @@ Market
             <div class="container">
               <div class="row">
                 <div class="col-12 col-xl-12">
+                  @if ($products->count() > 0)
                   <div class="row">
+                    @foreach($products as $key => $product)
                     <div class="col-12 col-lg-3">
                       <div class="speaker-neat">
                         <div class="speaker-neat__image poster in-view">
-                          <figure><img class="lazyload--el lazyload in-view__child" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="assets/media/stock/placeholder-445x600.jpg" alt="" width="445" height="600">
+                          <figure><img class="lazyload--el lazyload in-view__child" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{$product->cover_image}}" alt="" width="445" height="600">
                             <div class="poster--cover in-view in-view__child text-right">
                               <button type="button" class="button px-3">
-                              <i class="fa-regular fa-heart py-3 f20"></i>
+                              <i class="fa-regular fa-heart py-3 f20 text-white"></i>
                               </button>
                             </div>
                           </figure>
                         </div>
                         <div class="speaker-neat__copy in-view">
-                          <p class="in-view__child in-view__child--fadein f18 mb-1">School chairs</p>
-                          <h5 class="in-view__child in-view__child--fadein f18">N50 000</h5>
+                          <p class="in-view__child in-view__child--fadein f18 mb-1">{{$product->name}}</p>
+                          <h5 class="in-view__child in-view__child--fadein f18">N{{$product->price}}</h5>
                         </div>
+                        <button class="snipcart-add-item"
+                        data-item-id="{{$product->id}}"
+                        data-item-price="{{$product->price}}"
+                        data-item-url="market"
+                        data-item-max-quantity="{{$product->quantity}}"
+                        data-item-description="{{$product->description}}"
+                        data-item-image="{{$product->cover_image}}"
+                        data-item-name="{{$product->name}}">
+                        Add to cart
+                      </button>
                       </div>
                     </div>
-                    <div class="col-12 col-lg-3">
-                      <div class="speaker-neat">
-                        <div class="speaker-neat__image poster in-view">
-                          <figure><img class="lazyload--el lazyload in-view__child" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="assets/media/stock/placeholder-445x600.jpg" alt="" width="445" height="600">
-                            <div class="poster--cover in-view in-view__child text-right">
-                              <button type="button" class="button px-3">
-                              <i class="fa-regular fa-heart py-3 f20"></i>
-                              </button>
-                            </div>
-                          </figure>
-                        </div>
-                        <div class="speaker-neat__copy in-view">
-                          <p class="in-view__child in-view__child--fadein f18 mb-1">School chairs</p>
-                          <h5 class="in-view__child in-view__child--fadein f18">N50 000</h5>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-lg-3">
-                      <div class="speaker-neat">
-                        <div class="speaker-neat__image poster in-view">
-                          <figure><img class="lazyload--el lazyload in-view__child" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="assets/media/stock/placeholder-445x600.jpg" alt="" width="445" height="600">
-                            <div class="poster--cover in-view in-view__child text-right">
-                              <button type="button" class="button px-3">
-                              <i class="fa-regular fa-heart py-3 f20"></i>
-                              </button>
-                            </div>
-                          </figure>
-                        </div>
-                        <div class="speaker-neat__copy in-view">
-                          <p class="in-view__child in-view__child--fadein f18 mb-1">School chairs</p>
-                          <h5 class="in-view__child in-view__child--fadein f18">N50 000</h5>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-lg-3">
-                      <div class="speaker-neat">
-                        <div class="speaker-neat__image poster in-view">
-                          <figure><img class="lazyload--el lazyload in-view__child" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="assets/media/stock/placeholder-445x600.jpg" alt="" width="445" height="600">
-                            <div class="poster--cover in-view in-view__child text-right">
-                              <button type="button" class="button px-3">
-                              <i class="fa-regular fa-heart py-3 f20"></i>
-                              </button>
-                            </div>
-                          </figure>
-                        </div>
-                        <div class="speaker-neat__copy in-view">
-                          <p class="in-view__child in-view__child--fadein f18 mb-1">School chairs</p>
-                          <h5 class="in-view__child in-view__child--fadein f18">N50 000</h5>
-                        </div>
-                      </div>
-                    </div>
+                    @endforeach
                     <div class="section--first_cta  text-center py-3">
                       <a  style="font-family:'Poppins' !important; letter-spacing: 0em !important; border-width: 4px" class="video-popup btn btn--primary btn--round btn-light rounded-0 border-dark" href="https://www.youtube.com/watch?v=kHJQ9gG26HQ">Load more</a>&nbsp;
                     </div>
                   </div>
+                  @else
+                  <div class="text-center">
+                    <h4 class="text-black ">
+                        NO PRODUCT AVAILABLE RIGNT NOW
+                    </h4>
+                </div>
+                @endif
                 </div>
               </div>
             </div>

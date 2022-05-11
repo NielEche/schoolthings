@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use App\Models\Products;
 use Image;
 
 class PagesController extends Controller
@@ -52,6 +53,7 @@ class PagesController extends Controller
 
     public function market()
     {
-        return view('market.index'); 
+        $products = Products::latest('created_at')->get();
+        return view('market.index', compact(['products'])); 
     }
 }

@@ -25,7 +25,7 @@ Sell
             <div class="container  border-dark py-4 px-5" style=" border-width: 4px;">
                 <x-jet-validation-errors class="mb-4" />
         
-                <form method="POST" action="{{ route('register') }}">
+                <form method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data">
                     @csrf
         
                     <div>
@@ -52,6 +52,61 @@ Sell
                         <x-jet-label for="price" value="{{ __('Price per item') }}" />
                         <x-jet-input id="price" class="block mt-1 w-full bg-transparent border-bottom border-dark shadow-none" type="number" name="price" :value="old('price')" required autofocus autocomplete="price" />
                     </div>
+                    <style>
+                        ::-webkit-file-upload-button {
+                            background: none;
+                            border: none;
+                            font-weight: bolder !important;
+                        }
+
+                        #blah{
+                        max-width:180px;
+                        max-height:180px;
+                        object-fit: cover;
+                        }
+                      
+                        input[type=file]{
+                            padding:10px;
+                            background:#2d2d2d;
+                        }
+                    </style>
+
+                    <script>
+                             function readURL(input) {
+                            if (input.files && input.files[0]) {
+                                var reader = new FileReader();
+
+                                reader.onload = function (e) {
+                                    $('#blah')
+                                        .attr('src', e.target.result);
+                                };
+
+                                reader.readAsDataURL(input.files[0]);
+                            }
+                        }
+                    </script>
+
+                    <div class="mt-4 row">
+                        <div class="col-12 col-lg-4 mt-4">
+                            <x-jet-label for="cover_image" value="{{ __('Cover Image ') }}*" />
+                            <x-jet-input id="cover_image" type="file" onchange="readURL(this);" class="block mt-3 mb-2 w-full bg-transparent border-bottom border-dark shadow-none" id="exampleFormControlFile1" name="cover_image" required autofocus />
+                            <img id="blah" src="https://res.cloudinary.com/iamvocal/image/upload/v1652264009/wh_kgublf.jpg" alt="your image" />
+                        </div>
+
+                        <div class="col-12 col-lg-4 mt-4">
+                            <x-jet-label for="image1" value="{{ __('Product Image') }}" />
+                            <x-jet-input id="image1" type="file" onchange="readURL(this);" class="block mt-3 mb-2 w-full bg-transparent border-bottom border-dark shadow-none" id="exampleFormControlFile1" name="image1"   autofocus />
+                            <img id="blah" src="https://res.cloudinary.com/iamvocal/image/upload/v1652264009/wh_kgublf.jpg" alt="your image" />
+                        </div>
+
+                        <div class="col-12 col-lg-4 mt-4">
+                            <x-jet-label for="image2" value="{{ __('Product Image ') }}" />
+                            <x-jet-input id="image2" type="file" onchange="readURL(this);" class="block mt-3 mb-2 w-full bg-transparent border-bottom border-dark shadow-none" id="exampleFormControlFile1" name="image2" autofocus  />
+                            <img id="blah" src="https://res.cloudinary.com/iamvocal/image/upload/v1652264009/wh_kgublf.jpg" alt="your image" />
+                        </div>
+                    
+                    </div>
+                    
         
         
                     @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())

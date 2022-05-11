@@ -39,5 +39,6 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard'); })->name('dashboard');
-        Route::get('sell', [PagesController::class, 'sell'])->name('sell');
+    Route::resource('/product', 'App\Http\Controllers\ProductsController');
+    Route::get('sell', [PagesController::class, 'sell'])->name('sell');
 });
